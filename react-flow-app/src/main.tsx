@@ -6,17 +6,21 @@ import Diagram from "./pages/Diagram";
 import Charts from "./pages/Charts";
 import { TeamProvider } from "./context/TeamContext";
 import "./styles/GlobalStyles.css"
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./themes/theme";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <TeamProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/diagram" element={<Diagram />} />
-          <Route path="/charts" element={<Charts />} />
-        </Routes>
-      </BrowserRouter>
-    </TeamProvider>
+    <ThemeProvider theme={theme}>
+      <TeamProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/diagram" element={<Diagram />} />
+            <Route path="/charts" element={<Charts />} />
+          </Routes>
+        </BrowserRouter>
+      </TeamProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );

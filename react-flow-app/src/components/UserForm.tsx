@@ -21,6 +21,7 @@ const UserForm = () => {
             onSubmit={handleSubmit}
             sx={{
                 display: "flex",
+                flexDirection: { xs: "column", sm: "row" }, // Mobilde dikey, geniş ekranda yatay
                 gap: 2,
                 justifyContent: "center",
                 alignItems: "center",
@@ -31,9 +32,9 @@ const UserForm = () => {
             }}
         >
             <FormControl sx={{ minWidth: 200 }}>
-                <InputLabel id="header-label">Select Team</InputLabel>
+                <InputLabel id="team-select-label">Ekip Seç</InputLabel>
                 <Select
-                    label="Select Team"
+                    labelId="team-select-label"
                     value={selectedTeam}
                     onChange={(e) => setSelectedTeam(e.target.value)}
                 >
@@ -44,8 +45,9 @@ const UserForm = () => {
                     ))}
                 </Select>
             </FormControl>
+
             <TextField
-                label="User Name"
+                label="Kullanıcı Adı"
                 variant="outlined"
                 value={userName}
                 onChange={(e) => setUserName(e.target.value)}
@@ -56,6 +58,7 @@ const UserForm = () => {
                     boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
                 }}
             />
+
             <Button
                 type="submit"
                 variant="contained"
@@ -73,7 +76,7 @@ const UserForm = () => {
                     },
                 }}
             >
-                Add User +
+                Kullanıcı Ekle
             </Button>
         </Box>
     );
