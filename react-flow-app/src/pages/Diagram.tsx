@@ -9,6 +9,8 @@ import ReactFlow, {
 } from "reactflow";
 import "reactflow/dist/style.css";
 import { useTeamContext } from "../context/TeamContext";
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Diagram = () => {
     const { teams } = useTeamContext();
@@ -84,6 +86,30 @@ const Diagram = () => {
                 <Controls />
                 <Background />
             </ReactFlow>
+            <Button 
+                color="inherit" 
+                component={Link} 
+                to="/"
+                sx={{ 
+                    position: "absolute", 
+                    top: 10, 
+                    right: 20, 
+                    padding: 1, 
+                    backgroundColor: "#333333", 
+                    color: "#FFD1B3",
+                    cursor: "pointer",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                        backgroundColor: "#FFD1B3",
+                        color: "#333333",
+                        transform: "scale(1.05)",
+                        boxShadow: "0px 4px 12px rgba(255, 209, 179, 0.4)",
+                    }
+                }}
+            >
+                Home Page
+            </Button>
+            
         </div>
     );
 };
