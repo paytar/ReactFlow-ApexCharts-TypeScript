@@ -1,25 +1,23 @@
 import { createTheme } from "@mui/material/styles";
-
-// Yeni renk paleti
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#FFD1B3", // Şeftali Tüyü
+      main: "#FFD1B3", 
     },
     secondary: {
-      main: "#6B8E23", // Zeytin Yeşili
+      main: "#6B8E23", 
     },
     background: {
-      default: "#F5F5F5", // Açık Gri
-      paper: "#FFFFFF", // Beyaz
+      default: "#F5F5F5", 
+      paper: "#FFFFFF", 
     },
     text: {
-      primary: "#333333", // Koyu Gri
+      primary: "#333333", 
       secondary: "#6B8E23",
     },
   },
   typography: {
-    fontFamily: "'Inter', sans-serif", // Daha modern ve okunaklı yazı tipi
+    fontFamily: "'Inter', sans-serif", 
   },
 });
 

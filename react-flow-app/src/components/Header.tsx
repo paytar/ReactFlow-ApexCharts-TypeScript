@@ -6,7 +6,7 @@ const Header = () => {
         <AppBar
             position="static"
             sx={{
-                backgroundColor: "#333333", // Koyu gri
+                backgroundColor: "#333333",
                 boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.2)",
             }}
         >

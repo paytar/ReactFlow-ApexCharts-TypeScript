@@ -51,7 +51,6 @@ const Diagram = () => {
         setEdges(newEdges);
     }, [teams, hiddenUsers]);
 
-    // Right click to hide users
     const handleRightClick = (event: React.MouseEvent, nodeId: string) => {
         event.preventDefault();
 

@@ -14,14 +14,13 @@ const UserForm = () => {
             setUserName("");
         }
     };
-
     return (
         <Box
             component="form"
             onSubmit={handleSubmit}
             sx={{
                 display: "flex",
-                flexDirection: { xs: "column", sm: "row" }, // Mobilde dikey, geniş ekranda yatay
+                flexDirection: { xs: "column", sm: "row" }, 
                 gap: 2,
                 justifyContent: "center",
                 alignItems: "center",
@@ -31,12 +30,15 @@ const UserForm = () => {
                 borderRadius: 2,
             }}
         >
-            <FormControl sx={{ minWidth: 200 }}>
-                <InputLabel id="team-select-label">Ekip Seç</InputLabel>
+            <FormControl sx={{ minWidth: 200 }} disabled={teams.length === 0}>
+                <InputLabel id="team-select-label">
+                    {teams.length === 0 ? "Eleman Ekleyin" : "Ekip Seç"}
+                </InputLabel>
                 <Select
                     labelId="team-select-label"
                     value={selectedTeam}
                     onChange={(e) => setSelectedTeam(e.target.value)}
+                    label={teams.length === 0 ? "Eleman Ekleyin" : "Ekip Seç"}
                 >
                     {teams.map((team) => (
                         <MenuItem key={team.id} value={team.id}>
